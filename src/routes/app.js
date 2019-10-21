@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import HelloWorld from '../components/helloWorld';
+import Login from '../container/Login';
 import Layout from '../components/Layout';
 
 const App = () => (
   <BrowserRouter>
     <Layout>
       <Switch>
-        <Route exact path='/' component={HelloWorld} />
+        <Route exact path='/' component={Login} />
       </Switch>
     </Layout>
   </BrowserRouter>
