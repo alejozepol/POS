@@ -21,6 +21,8 @@
   }
 }
 .Input::placeholder{
+  font-family: $fontFamily $normalStyle;
+  font-style: $normalStyle;
   padding-left: 5%;
   color: $colorClaro;
 }

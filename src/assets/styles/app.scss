@@ -3,6 +3,8 @@
 body{
     margin: 0;
 /*     background-color: brown; */
+    font-family: $fontFamily;
+    font-style: $normalStyle;
 }
 .app{
     display: grid;
