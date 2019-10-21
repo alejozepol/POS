@@ -1,0 +1,17 @@
+@import '../global.scss';
+
+.Header{
+  display: flex;
+  flex-direction: column;
+  padding: 5% 0;
+  background-color: $colorSegundario;
+  &__Menu {
+    list-style: none;
+    padding: 0%;
+    text-align: center;
+  }
+  &-img{
+    margin: 10% 0;
+    max-width: 100%;
+  }
+}

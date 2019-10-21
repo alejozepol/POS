@@ -1,4 +1,13 @@
+@import 'global.scss';
+
 body{
     margin: 0;
 /*     background-color: brown; */
+}
+.app{
+    display: grid;
+    grid-template-columns: 17% auto;
+    min-height: 100vh;
+    background-color: $colorPrimario;
+    color: $colorClaro;
 }
