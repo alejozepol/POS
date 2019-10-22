@@ -6,7 +6,7 @@ import ContentForm from '../components/Atomos/ContentForm';
 import Input from '../components/Atomos/Input';
 import Button from '../components/Atomos/Button';
 import Icons from '../components/Atomos/Icons';
-import '../assets/styles/components/Login.scss';
+import '../assets/styles/Login.scss';
 
 const Login = (props) => {
 

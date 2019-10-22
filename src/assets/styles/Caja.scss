@@ -1,0 +1,33 @@
+@import './global.scss';
+
+.Caja{
+  display: grid;
+  grid-template-rows: 10% auto;
+  grid-template-columns: 50% auto;
+  &__title{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+  }
+  &__products{
+    display: grid;
+    grid-template-columns: 50% auto;
+    max-height: 100vh;
+    overflow-y: scroll;
+    &::-webkit-scrollbar{
+      height: 5px;
+      width: 5px;
+    }
+    &::-webkit-scrollbar-thumb{
+        border-radius: 30px;
+        height: 5px;
+        background: fade-out($colorClaro, 0.9)
+    
+    }
+    &::-webkit-scrollbar-thumb:hover{
+        display: block;
+        box-shadow: 0 0 2px 1px fade-out($colorOscuro, 0.5);
+        background: $colorClaro;
+    }
+  }
+}

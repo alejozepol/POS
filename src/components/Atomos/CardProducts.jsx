@@ -1,19 +1,20 @@
 import React from 'react';
+import '../../assets/styles/components/Atomos/CardProducts.scss';
 
-const CardProduts = ({ img, title, prime, primeGram }) => {
+const CardProduts = ({ key, img, title, price, description }) => {
 
   return (
-    <div className='CardProduts'>
+    <div className='CardProduts' key={key}>
       <div className='CardProduts__img'>
-        <img src={img} alt={img} />
+        <img src={img} alt={title} />
       </div>
       <div className='CardProduts__info'>
         <h4>{title}</h4>
         <p>
           $
-          {prime}
+          {price}
         </p>
-        <small>{primeGram}</small>
+        <small>{description}</small>
       </div>
     </div>
   );

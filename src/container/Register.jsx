@@ -6,7 +6,7 @@ import ContentForm from '../components/Atomos/ContentForm';
 import Input from '../components/Atomos/Input';
 import Button from '../components/Atomos/Button';
 import Icons from '../components/Atomos/Icons';
-import '../assets/styles/components/Register.scss';
+import '../assets/styles/Register.scss';
 
 const Register = () => {
   return (
