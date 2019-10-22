@@ -3,10 +3,10 @@
 .ContentForm{
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  max-height: 800px;
-  width: 400px;
-  height: 800px;
+  max-width: 340px;
+  max-height: 650px;
+  width: 30%;
+  height: 80%;
   border-radius: 30px;
   border: 1px solid $colorOscuro;
   background-color: $colorSegundario;
@@ -14,6 +14,10 @@
     text-align: center;
   }
   &__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height:80% ;
 
   }
 }

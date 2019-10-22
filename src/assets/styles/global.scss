@@ -12,7 +12,7 @@ $h1: 60px;
 $h1Style: 'ExtraBold';
 $h2: 50px;
 $h2Style: 'ExtraBold';
-$h3: 50px;
+$h3: 25px;
 $h3Style: 'ExtraBold';
 $h4: 50px;
 $h4Style: 'ExtraBold';
@@ -47,6 +47,10 @@ h5 {
 }
 .bg-primario{
   background-color: $colorPrimario;
+  color: $colorClaro;
+}
+.bg-oscuro{
+  background-color: $colorOscuro;
   color: $colorClaro;
 }
 .bg-segundario{
