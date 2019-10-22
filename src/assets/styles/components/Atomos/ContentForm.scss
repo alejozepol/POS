@@ -9,7 +9,7 @@
   height: 80%;
   border-radius: 30px;
   border: 1px solid $colorOscuro;
-  background-color: $colorSegundario;
+  @extend .bg-segundario;
   &__title{
     text-align: center;
   }

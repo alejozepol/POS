@@ -4,7 +4,7 @@ import '../../assets/styles/components/Atomos/Button.scss';
 const Button = ({ type, children }) => {
   switch (type) {
     case 'redondo-aceptacion':
-      return (<button type='button' className='Button Button--redondo--aceptacion'>{ children }</button>);
+      return (<button type='submit' className='Button Button--redondo--aceptacion'>{ children }</button>);
     case 'lg':
       return (<button type='button' className='Button Button--lg'>{ children }</button>);
     case 'lg-img':

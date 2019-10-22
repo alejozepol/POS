@@ -1,0 +1,19 @@
+@import '../global.scss';
+
+.Register{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  &__Form{
+    position: relative;
+  }
+}
+.btn{
+  position: absolute;
+  right: 10%;
+  top: 28%;
+}
+.Link{
+  width: 100%;
+  text-align: center;
+}

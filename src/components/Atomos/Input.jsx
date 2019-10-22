@@ -1,16 +1,48 @@
 import React from 'react';
 import '../../assets/styles/components/Atomos/Input.scss';
 
-const Input = ({ type, name }) => {
-  switch (type) {
+const Input = ({ category, type, name, onchange }) => {
+  switch (category) {
     case 'top':
-      return (<input placeholder={name} className='Input Input--top' />);
+      return (
+        <input
+          name={type}
+          placeholder={name}
+          type={type}
+          className='Input Input--top'
+          onChange={onchange}
+        />
+      );
     case 'bottom':
-      return (<input placeholder={name} className='Input Input--bottom' />);
+      return (
+        <input
+          name={type}
+          placeholder={name}
+          type={type}
+          className='Input Input--bottom'
+          onChange={onchange}
+        />
+      );
     case 'cuadrado':
-      return (<input placeholder={name} className='Input Input--cuadrado' />);
+      return (
+        <input
+          name={type}
+          placeholder={name}
+          type={type}
+          className='Input Input--cuadrado'
+          onChange={onchange}
+        />
+      );
     default:
-      return (<input placeholder={name} className='Input Input--default' />);
+      return (
+        <input
+          name={type}
+          placeholder={name}
+          type={type}
+          className='Input Input--default'
+          onChange={onchange}
+        />
+      );
 
   }
 };
