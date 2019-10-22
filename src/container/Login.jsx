@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ImgPrimary from '../components/Atomos/ImgPrimary';
 import PromoLogin from '../assets/static/PromoLogin.png';
 import ContentForm from '../components/Atomos/ContentForm';
@@ -23,7 +24,9 @@ const Login = () => {
         </from>
         <div className='Login__Register'>
           <h3>No tienes cuenta</h3>
-          <Button type='lg'>Registrate</Button>
+          <Link to='/registro'>
+            <Button type='lg'>Registrate</Button>
+          </Link>
           <Button type='lg-img'>
             <Icons type='google' />
             Google
