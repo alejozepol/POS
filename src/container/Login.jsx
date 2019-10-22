@@ -34,12 +34,14 @@ const Login = (props) => {
             category='top'
             name='Correo Electronico'
             type='email'
+            requiered='true'
             onchange={handleInput}
           />
           <Input
             category='bottom'
             name='Contraseña'
             type='password'
+            requiered='true'
             onchange={handleInput}
           />
           <div className='btn'>
