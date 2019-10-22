@@ -45,3 +45,19 @@ h5 {
 	-moz-box-shadow: 5px 3px 19px 0px $colorOscuro;
 	box-shadow: 5px 3px 19px 0px $colorOscuro;
 }
+.bg-primario{
+  background-color: $colorPrimario;
+  color: $colorClaro;
+}
+.bg-segundario{
+  background-color: $colorSegundario;
+  color: $colorOscuro;
+}
+.bg-aceptacion{
+  background-color: $colorAceptacion;
+  color: $colorOscuro;
+}
+.bg-contraste{
+  background-color: $colorContraste;
+  color: $colorOscuro;
+}
