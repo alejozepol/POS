@@ -24,7 +24,7 @@ const Login = () => {
         </from>
         <div className='Login__Register'>
           <h3>No tienes cuenta</h3>
-          <Link to='/registro'>
+          <Link to='/registro' className='Link'>
             <Button type='lg'>Registrate</Button>
           </Link>
           <Button type='lg-img'>
