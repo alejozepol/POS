@@ -10,4 +10,19 @@
     height: 60px;
     @extend .bg-aceptacion;
   }
+  &--lg{
+    border-radius: 30px;
+    width: 80%;
+    height: 34px;
+    @extend .bg-oscuro;
+    &--img{
+      display: grid;
+      grid-template-columns: 20% 80%;
+      border-radius: 30px;
+      width: 80%;
+      height: 34px;
+      @extend .bg-oscuro;
+
+    }
+  }
 }
