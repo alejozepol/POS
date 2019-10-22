@@ -1,8 +1,8 @@
 import React from 'react';
 import LogoCliente from '../assets/static/LogoCliente.png';
-import IcoCaja from '../assets/static/IcoCaja.png';
-import IcoInventario from '../assets/static/IcoInventario.png';
+
 import '../assets/styles/components/Header.scss';
+import Icons from './Atomos/Icons';
 
 const Header = () => {
   return (
@@ -10,10 +10,10 @@ const Header = () => {
       <img className='Header-img' src={LogoCliente} alt='Logo Cliente' />
       <ul className='Header__Menu'>
         <li className='Header__Menu__item'>
-          <img className='Header-img' src={IcoCaja} alt='Logo Cliente' />
+          <Icons type='caja' />
         </li>
         <li className='Header__Menu__item'>
-          <img className='Header-img' src={IcoInventario} alt='Logo Cliente' />
+          <Icons type='inventario' />
         </li>
       </ul>
     </section>
