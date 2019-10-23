@@ -3,11 +3,18 @@
 .Header{
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   padding: 5% 0;
   background-color: $colorSegundario;
+  &-img{
+    max-width: 90%;
+    max-height: 90%;
+    padding: 5%;
+  }
   &__Menu {
     list-style: none;
     padding: 0%;
     text-align: center;
+
   }
 }

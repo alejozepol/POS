@@ -22,7 +22,7 @@ const Caja = (props) => {
         <h4>Lista de Productos</h4>
       </div>
       <div className='Caja__compras__title'>
-        <div className='Caja__products__title__btn'>
+        <div className='Caja__compras__title__btn'>
           <Button>Codigo de Barras</Button>
           <Button>Cierre de Caja</Button>
         </div>
