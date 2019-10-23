@@ -1,5 +1,7 @@
 import React from 'react';
 import '../../assets/styles/components/Atomos/CardProducts.scss';
+import Button from './Button';
+import Icons from './Icons';
 
 const CardProducts = ({ key, img, title, price, description }) => {
 
@@ -15,6 +17,11 @@ const CardProducts = ({ key, img, title, price, description }) => {
           {price}
         </p>
         <small>{description}</small>
+      </div>
+      <div className='CardProducts__btn'>
+        <Button type='redondo-aceptacion'>
+          <Icons type='check' />
+        </Button>
       </div>
     </div>
   );

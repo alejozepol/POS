@@ -1,26 +1,28 @@
 @import './global.scss';
 
-.Login{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  &__Form{
-    position: relative;
-  }
-  &__Register{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 50%;
-  }
+.Login {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	&__Form {
+		position: relative;
+	}
+	&__Register {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		height: 50%;
+	}
 }
-.btn{
-  position: absolute;
-    right: 8%;
-    top: 0%;
+.btn {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+  right: 10%;
+  top: 10%;
 }
-.Link{
-  width: 100%;
-  text-align: center;
+.Link {
+	width: 100%;
+	text-align: center;
 }

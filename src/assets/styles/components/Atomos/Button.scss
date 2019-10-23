@@ -6,8 +6,8 @@
   @extend .sombra;
   &--redondo--aceptacion{
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 100%;
+    height: 100%;
     @extend .bg-aceptacion;
   }
   &--lg{
