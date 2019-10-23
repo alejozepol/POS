@@ -4,9 +4,9 @@ import '../../assets/styles/components/Atomos/ItemShoppingList.scss';
 import Button from './Button';
 
 const ItemShoppingList = (props) => {
-  const { key, title, amount, price, priceTotal, onClick } = props;
+  const { id, title, amount, price, priceTotal, onClick } = props;
   return (
-    <div className='ItemShoppingList' key={key}>
+    <div className='ItemShoppingList' key={id}>
       <div>{title}</div>
       <div>{amount}</div>
       <div>{price}</div>

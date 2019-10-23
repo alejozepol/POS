@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import React from 'react';
 import { connect } from 'react-redux';
 import { addToCart, updateToCart, deleteToCart } from '../actions';
@@ -23,13 +24,12 @@ const Caja = (props) => {
   };
 
   const handleDeleteToCard = (itemId) => {
-    console.log(itemId)
     props.deleteToCart(itemId);
-    products.map(((item) => {
+    products.map((item) => {
       if (itemId === item.id) {
-        item.amount = 0
+        item.amount = 0;
       }
-    }));
+    });
   };
 
   return (
@@ -45,8 +45,8 @@ const Caja = (props) => {
       </div>
       <div className='Caja__compras__title'>
         <div className='Caja__compras__title__btn'>
-          <Button>Codigo de Barras</Button>
-          <Button>Cierre de Caja</Button>
+          <Button type='lg'>Codigo de Barras</Button>
+          <Button type='lg'>Cierre de Caja</Button>
         </div>
         <h4>Lista de Compras</h4>
       </div>
@@ -70,7 +70,7 @@ const Caja = (props) => {
               title={item.title}
               amount={item.amount}
               price={item.price}
-              priceTotal={item.priceTotal}
+              priceTotal={item.price * item.amount}
               onClick={() => handleDeleteToCard(item.id)}
             />
           ))}

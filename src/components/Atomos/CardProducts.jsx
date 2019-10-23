@@ -4,9 +4,9 @@ import Icons from './Icons';
 import '../../assets/styles/components/Atomos/CardProducts.scss';
 
 const CardProducts = (props) => {
-  const { key, img, title, price, description, onclick } = props;
+  const { id, img, title, price, description, onclick } = props;
   return (
-    <div className='CardProducts' key={key}>
+    <div className='CardProducts' key={id}>
       <div className='CardProducts__img'>
         <img src={img} alt={title} />
       </div>

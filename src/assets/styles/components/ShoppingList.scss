@@ -14,7 +14,7 @@
 		@extend .bg-segundario;
 	}
 	&__items {
-		padding-block-end: auto;
+		margin-block-end: auto;
 		overflow-y: scroll;
 		max-height: 55vh;
 		&::-webkit-scrollbar {
