@@ -13,7 +13,7 @@ const Button = (props) => {
     case 'aceptar':
       return (<button type='button' onClick={onClick} className='Button Button--aceptar'>{ children }</button>);
     default:
-      return (<button type='button' onClick={onClick} className='Button Button--redondo'>{ children }</button>);
+      return (<button type='button' onClick={onClick} className='Button bg-transparent'>{ children }</button>);
 
   }
 };

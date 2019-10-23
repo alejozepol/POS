@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addToCart } from '../actions';
+import { addToCart, updateToCart, deleteToCart } from '../actions';
 import CardProducts from '../components/Atomos/CardProducts';
 import ShoppingList from '../components/ShoppingList';
 import ItemShoppingList from '../components/Atomos/ItemsShoppingList';
@@ -12,7 +12,24 @@ const Caja = (props) => {
   const { products, cart } = props;
 
   const hanldAddToCart = (product) => {
-    props.addToCart(product);
+    if (product.amount) {
+      product.amount += 1;
+      props.updateToCart(product);
+    } else {
+      product.amount = 1;
+      props.addToCart(product);
+
+    }
+  };
+
+  const handleDeleteToCard = (itemId) => {
+    console.log(itemId)
+    props.deleteToCart(itemId);
+    products.map(((item) => {
+      if (itemId === item.id) {
+        item.amount = 0
+      }
+    }));
   };
 
   return (
@@ -47,7 +64,16 @@ const Caja = (props) => {
       </div>
       <div className='Caja__compras'>
         <ShoppingList>
-          {cart.map((item) => (<ItemShoppingList key={item.id} title={item.title} amount={item.amount} price={item.price} priceTotal={item.priceTotal} />))}
+          {cart.map((item) => (
+            <ItemShoppingList
+              key={item.id}
+              title={item.title}
+              amount={item.amount}
+              price={item.price}
+              priceTotal={item.priceTotal}
+              onClick={() => handleDeleteToCard(item.id)}
+            />
+          ))}
         </ShoppingList>
       </div>
     </section>
@@ -64,6 +90,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   addToCart,
+  updateToCart,
+  deleteToCart,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Caja);

@@ -8,17 +8,7 @@ import App from './routes/app';
 const composeEnhacers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const initialState = {
-  cart: [
-    {
-      'id': '1',
-      'image': 'https://arepa.s3.amazonaws.com/camiseta.png',
-      'title': 'Camiseta',
-      'price': 25,
-      'description': 'bla bla bla bla bla',
-      'amount': 1,
-      'priceTotal': 4,
-    },
-  ],
+  cart: [],
   products: [
     {
       'id': '1',

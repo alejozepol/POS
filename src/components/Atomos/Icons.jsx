@@ -5,7 +5,7 @@ import IcoCaja from '../../assets/static/IcoCaja.png';
 import IcoInventario from '../../assets/static/IcoInventario.png';
 import '../../assets/styles/components/Atomos/Icons.scss';
 
-const Icons = ({ type }) => {
+const Icons = ({ type, onClick }) => {
   switch (type) {
     case 'check':
       return (<i className='material-icons'> check </i>);
@@ -20,7 +20,7 @@ const Icons = ({ type }) => {
     case 'inventario':
       return (<img className='Icons--img' src={IcoInventario} alt='Logo Inventario' />);
     default:
-      return (<button type='button' className='Button Button--redondo'>{children}</button>);
+        return (<i className='material-icons'> check </i>);
 
   }
 };
