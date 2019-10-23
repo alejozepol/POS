@@ -1,14 +1,14 @@
 import React from 'react';
 import '../../assets/styles/components/Atomos/CardProducts.scss';
 
-const CardProduts = ({ key, img, title, price, description }) => {
+const CardProducts = ({ key, img, title, price, description }) => {
 
   return (
-    <div className='CardProduts' key={key}>
-      <div className='CardProduts__img'>
+    <div className='CardProducts' key={key}>
+      <div className='CardProducts__img'>
         <img src={img} alt={title} />
       </div>
-      <div className='CardProduts__info'>
+      <div className='CardProducts__info'>
         <h4>{title}</h4>
         <p>
           $
@@ -20,4 +20,4 @@ const CardProduts = ({ key, img, title, price, description }) => {
   );
 };
 
-export default CardProduts;
+export default CardProducts;
