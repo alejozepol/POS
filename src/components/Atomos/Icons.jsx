@@ -9,6 +9,8 @@ const Icons = ({ type }) => {
   switch (type) {
     case 'check':
       return (<i className='material-icons'> check </i>);
+    case 'delete':
+      return (<i className='material-icons'> delete </i>);
     case 'google':
       return (<img className='Icons--img' src={IcoGoogle} alt='Logo Caja' />);
     case 'facebook':

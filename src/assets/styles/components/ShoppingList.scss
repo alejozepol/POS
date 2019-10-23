@@ -1,0 +1,11 @@
+@import '../global.scss';
+
+.ShoppingList{
+  &__title{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 0.5fr;
+    align-items: center;
+    text-align: center;
+    @extend .bg-segundario;
+  }
+}

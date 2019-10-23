@@ -2,9 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import CardProduts from '../components/Atomos/CardProducts';
 import '../assets/styles/Caja.scss';
+import ShoppingList from '../components/ShoppingList';
+import ItemShoppingList from '../components/Atomos/ItemsShoppingList';
 
 const Caja = (props) => {
-  const { products } = props;
+  const { products, cart } = props;
 
   return (
     <section className='Caja'>
@@ -21,7 +23,9 @@ const Caja = (props) => {
         ))}
       </div>
       <div className='Caja__compras'>
-        ddd
+        <ShoppingList>
+          {cart.map((item) => (<ItemShoppingList key={item.id} title={item.title} amount={item.amount} price={item.price} priceTotal={item.priceTotal} />))}
+        </ShoppingList>
       </div>
     </section>
   );
@@ -31,6 +35,7 @@ const Caja = (props) => {
 const mapStateToProps = (state) => {
   return {
     products: state.products,
+    cart: state.cart,
   };
 };
 export default connect(mapStateToProps, null)(Caja);
