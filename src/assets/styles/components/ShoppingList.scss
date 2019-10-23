@@ -1,11 +1,45 @@
 @import '../global.scss';
 
-.ShoppingList{
-  &__title{
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 0.5fr;
-    align-items: center;
-    text-align: center;
-    @extend .bg-segundario;
-  }
+.ShoppingList {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100%;
+	max-height: 70vh;
+	&__title {
+		display: grid;
+		grid-template-columns: 2fr 1fr 1fr 1fr 0.5fr;
+		align-items: center;
+		text-align: center;
+		@extend .bg-segundario;
+	}
+	&__items {
+		padding-block-end: auto;
+		overflow-y: scroll;
+		max-height: 55vh;
+		&::-webkit-scrollbar {
+			height: 5px;
+			width: 5px;
+		}
+		&::-webkit-scrollbar-thumb {
+			border-radius: 30px;
+			height: 5px;
+			background: fade-out($colorClaro, 0.9);
+		}
+		&::-webkit-scrollbar-thumb:hover {
+			display: block;
+			box-shadow: 0 0 2px 1px fade-out($colorOscuro, 0.5);
+			background: $colorClaro;
+		}
+	}
+	&__footer {
+		@extend .bg-segundario;
+	}
+	&__pago {
+		text-align: center;
+	}
+	&__total {
+		display: flex;
+		justify-content: space-between;
+	}
 }

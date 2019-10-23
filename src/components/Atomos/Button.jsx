@@ -9,6 +9,8 @@ const Button = ({ type, children }) => {
       return (<button type='button' className='Button Button--lg'>{ children }</button>);
     case 'lg-img':
       return (<button type='button' className='Button Button--lg--img'>{ children }</button>);
+    case 'aceptar':
+      return (<button type='button' className='Button Button--aceptar'>{ children }</button>);
     default:
       return (<button type='button' className='Button Button--redondo'>{ children }</button>);
 

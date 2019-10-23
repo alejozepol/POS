@@ -1,5 +1,6 @@
 import React from 'react';
 import Icons from './Atomos/Icons';
+import Button from './Atomos/Button';
 import '../assets/styles/components/ShoppingList.scss';
 
 const ShoppingList = ({ children }) => {
@@ -14,6 +15,23 @@ const ShoppingList = ({ children }) => {
       </div>
       <div className='ShoppingList__items'>
         {children}
+      </div>
+      <div className='ShoppingList__footer'>
+        <div className='ShoppingList__total'>
+          <div>
+            <h4>Subtotal</h4>
+            <h4>Impuesto</h4>
+            <h4>Total</h4>
+          </div>
+          <div>
+            <p>222</p>
+            <p>222</p>
+            <p>222</p>
+          </div>
+        </div>
+        <div className='ShoppingList__pago'>
+          <Button type='aceptar'>Pagar</Button>
+        </div>
       </div>
     </section>
   );
