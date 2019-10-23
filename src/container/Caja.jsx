@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { addToCart } from '../actions';
 import CardProducts from '../components/Atomos/CardProducts';
 import ShoppingList from '../components/ShoppingList';
 import ItemShoppingList from '../components/Atomos/ItemsShoppingList';
@@ -10,6 +11,10 @@ import '../assets/styles/Caja.scss';
 const Caja = (props) => {
   const { products, cart } = props;
 
+  const hanldAddToCart = (product) => {
+    props.addToCart(product);
+  };
+
   return (
     <section className='Caja'>
       <div className='Caja__title'>
@@ -17,7 +22,7 @@ const Caja = (props) => {
       </div>
       <div className='Caja__products__title'>
         <div className='Caja__products__title__btn'>
-          <Input name='Buscar'/>
+          <Input name='Buscar' />
         </div>
         <h4>Lista de Productos</h4>
       </div>
@@ -36,6 +41,7 @@ const Caja = (props) => {
             title={product.title}
             price={product.price}
             description={product.description}
+            onclick={() => hanldAddToCart(product)}
           />
         ))}
       </div>
@@ -55,4 +61,9 @@ const mapStateToProps = (state) => {
     cart: state.cart,
   };
 };
-export default connect(mapStateToProps, null)(Caja);
+
+const mapDispatchToProps = {
+  addToCart,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Caja);

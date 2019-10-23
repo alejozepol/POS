@@ -1,10 +1,10 @@
 import React from 'react';
-import '../../assets/styles/components/Atomos/CardProducts.scss';
 import Button from './Button';
 import Icons from './Icons';
+import '../../assets/styles/components/Atomos/CardProducts.scss';
 
-const CardProducts = ({ key, img, title, price, description }) => {
-
+const CardProducts = (props) => {
+ const { key, img, title, price, description, onclick } = props;
   return (
     <div className='CardProducts' key={key}>
       <div className='CardProducts__img'>
@@ -19,7 +19,7 @@ const CardProducts = ({ key, img, title, price, description }) => {
         <small>{description}</small>
       </div>
       <div className='CardProducts__btn'>
-        <Button type='redondo-aceptacion'>
+        <Button type='redondo-aceptacion' onClick={onclick}>
           <Icons type='check' />
         </Button>
       </div>
