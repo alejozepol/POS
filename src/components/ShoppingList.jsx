@@ -3,7 +3,7 @@ import Icons from './Atomos/Icons';
 import Button from './Atomos/Button';
 import '../assets/styles/components/ShoppingList.scss';
 
-const ShoppingList = ({ children }) => {
+const ShoppingList = ({ children, onClick }) => {
   return (
     <section className='ShoppingList'>
       <div className='ShoppingList__title'>
@@ -30,7 +30,7 @@ const ShoppingList = ({ children }) => {
           </div>
         </div>
         <div className='ShoppingList__pago'>
-          <Button type='aceptar'>Pagar</Button>
+          <Button type='aceptar' onClick={onClick}>Pagar</Button>
         </div>
       </div>
     </section>

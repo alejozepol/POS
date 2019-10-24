@@ -12,7 +12,7 @@ import '../assets/styles/Caja.scss';
 
 const Caja = (props) => {
   const { products, cart } = props;
-
+  let modal = false;
   const hanldAddToCart = (product) => {
     if (product.amount) {
       product.amount += 1;
@@ -33,20 +33,28 @@ const Caja = (props) => {
     });
   };
 
+  const viewModal = () => {
+
+    modal ? modal = false : modal = true;
+    console.log(modal);
+  };
+
   return (
     <section className='Caja'>
-      <Modal>
-      <h3>Modalidad de Pago</h3>
-        <Button type='aceptar'>
-          Efectivo
-        </Button>
-        <Button type='segundario'>
-          Tarjeta de Credito
-        </Button>
-        <Button type='contraste'>
-          Tarjeta Debito
-        </Button>
-      </Modal>
+      {modal && (
+        <Modal>
+          <h3>Modalidad de Pago</h3>
+          <Button type='aceptar'>
+            Efectivo
+          </Button>
+          <Button type='segundario'>
+            Tarjeta de Credito
+          </Button>
+          <Button type='contraste'>
+            Tarjeta Debito
+          </Button>
+        </Modal>
+      )}
       <div className='Caja__title'>
         <h3>Caja</h3>
       </div>
@@ -76,7 +84,7 @@ const Caja = (props) => {
         ))}
       </div>
       <div className='Caja__compras'>
-        <ShoppingList>
+        <ShoppingList onClick={() => viewModal(modal)}>
           {cart.map((item) => (
             <ItemShoppingList
               key={item.id}
