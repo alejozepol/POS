@@ -7,6 +7,7 @@ import ShoppingList from '../components/ShoppingList';
 import ItemShoppingList from '../components/Atomos/ItemsShoppingList';
 import Button from '../components/Atomos/Button';
 import Input from '../components/Atomos/Input';
+import Modal from '../components/Atomos/Modal';
 import '../assets/styles/Caja.scss';
 
 const Caja = (props) => {
@@ -34,6 +35,18 @@ const Caja = (props) => {
 
   return (
     <section className='Caja'>
+      <Modal>
+      <h3>Modalidad de Pago</h3>
+        <Button type='aceptar'>
+          Efectivo
+        </Button>
+        <Button type='segundario'>
+          Tarjeta de Credito
+        </Button>
+        <Button type='contraste'>
+          Tarjeta Debito
+        </Button>
+      </Modal>
       <div className='Caja__title'>
         <h3>Caja</h3>
       </div>

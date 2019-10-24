@@ -34,6 +34,7 @@ const ShoppingList = ({ children }) => {
         </div>
       </div>
     </section>
+
   );
 };
 

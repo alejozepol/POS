@@ -1,0 +1,23 @@
+@import '../../global.scss';
+
+.Modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	background-color: fade-out($color: $colorOscuro, $amount: 0.4) ;
+	z-index: 1;
+	top: 0px;
+  left: 0;
+  &__content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    height: 300px;
+    @extend .bg-primario;
+  }
+}

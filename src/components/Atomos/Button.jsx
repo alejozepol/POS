@@ -12,8 +12,12 @@ const Button = (props) => {
       return (<button type='button' onClick={onClick} className='Button Button--lg--img'>{ children }</button>);
     case 'aceptar':
       return (<button type='button' onClick={onClick} className='Button Button--aceptar'>{ children }</button>);
+    case 'segundario':
+      return (<button type='button' onClick={onClick} className='Button Button--lg bg-segundario'>{ children }</button>);
+    case 'contraste':
+      return (<button type='button' onClick={onClick} className='Button Button--lg bg-contraste'>{ children }</button>);
     default:
-      return (<button type='button' onClick={onClick} className='Button bg-transparent'>{ children }</button>);
+      return (<button type='button' onClick={onClick} className='Button Button--lg bg-transparent'>{ children }</button>);
 
   }
 };
