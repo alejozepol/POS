@@ -2,10 +2,18 @@ import React from 'react';
 import Icons from './Atomos/Icons';
 import Button from './Atomos/Button';
 import '../assets/styles/components/ShoppingList.scss';
+import Input from './Atomos/Input';
 
 const ShoppingList = ({ children, onClick }) => {
   return (
     <section className='ShoppingList'>
+      <div className='ShoppingList__client'>
+        <Input category='cuadrado' name='identificacion' />
+        <Input category='cuadrado' name='Nombres y Apellidos' />
+        <Button type='redondo-aceptacion'>
+          <Icons type='check' />
+        </Button>
+      </div>
       <div className='ShoppingList__title'>
         <h4>Descripción Producto</h4>
         <h4>Cantidad</h4>

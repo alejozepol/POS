@@ -11,6 +11,17 @@
 		grid-template-columns: 2fr 1fr 1fr 1fr 0.5fr;
 		align-items: center;
 		text-align: center;
+		@extend .bg-contraste;
+	}
+	&__client{
+		display: grid;
+		grid-template-columns: auto 1fr 40px;
+		align-items: center;
+		text-align: center;
+		margin: 2% 0;
+		& input {
+			background-color: transparent;
+		}
 		@extend .bg-segundario;
 	}
 	&__items {
