@@ -9,6 +9,7 @@ const composeEnhacers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const initialState = {
   cart: [],
+  subtotal: 0,
   products: [
     {
       'id': '1',

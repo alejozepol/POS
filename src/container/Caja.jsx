@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import React from 'react';
 import { connect } from 'react-redux';
-import { addToCart, updateToCart, deleteToCart } from '../actions';
+import { addToCart, deleteToCart } from '../actions';
 import CardProducts from '../components/Atomos/CardProducts';
 import ShoppingList from '../components/ShoppingList';
 import ItemShoppingList from '../components/Atomos/ItemsShoppingList';
@@ -11,24 +11,16 @@ import Modal from '../components/Atomos/Modal';
 import '../assets/styles/Caja.scss';
 
 const Caja = (props) => {
-  const { products, cart } = props;
+  const { products, cart, subtotal } = props;
   let modal = false;
-  let subtotal = 0;
   const hanldAddToCart = (product) => {
-    if (product.amount) {
-      product.amount += 1;
-      props.updateToCart(product);
-    } else {
-      product.amount = 1;
-      props.addToCart(product);
-
-    }
+    props.addToCart(product);
   };
 
-  const handleDeleteToCard = (itemId) => {
-    props.deleteToCart(itemId);
-    products.map((item) => {
-      if (itemId === item.id) {
+  const handleDeleteToCard = (item) => {
+    props.deleteToCart(item);
+    products.map((product) => {
+      if (item.id === product.id) {
         item.amount = 0;
       }
     });
@@ -87,7 +79,6 @@ const Caja = (props) => {
       <div className='Caja__compras'>
         <ShoppingList subtotal={subtotal} onClick={() => viewModal(modal)}>
           {cart.map((item) => {
-            subtotal += (item.price * item.amount)
             return (
               <ItemShoppingList
                 key={item.id}
@@ -95,7 +86,7 @@ const Caja = (props) => {
                 amount={item.amount}
                 price={item.price}
                 priceTotal={item.price * item.amount}
-                onClick={() => handleDeleteToCard(item.id)}
+                onClick={() => handleDeleteToCard(item)}
               />
             )
           })}
@@ -110,12 +101,12 @@ const mapStateToProps = (state) => {
   return {
     products: state.products,
     cart: state.cart,
+    subtotal: state.subtotal,
   };
 };
 
 const mapDispatchToProps = {
   addToCart,
-  updateToCart,
   deleteToCart,
 };
 
