@@ -5,7 +5,7 @@ import '../assets/styles/components/ShoppingList.scss';
 import Input from './Atomos/Input';
 
 const ShoppingList = ({ children, onClick, subtotal }) => {
-  const impuesto = subtotal * 0.19;
+  const impuesto = Math.round(subtotal * 0.19);
   const total = subtotal + impuesto;
   return (
     <section className='ShoppingList'>
