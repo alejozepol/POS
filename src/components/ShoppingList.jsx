@@ -4,7 +4,9 @@ import Button from './Atomos/Button';
 import '../assets/styles/components/ShoppingList.scss';
 import Input from './Atomos/Input';
 
-const ShoppingList = ({ children, onClick }) => {
+const ShoppingList = ({ children, onClick, subtotal }) => {
+  const impuesto = subtotal * 0.19;
+  const total = subtotal + impuesto;
   return (
     <section className='ShoppingList'>
       <div className='ShoppingList__client'>
@@ -32,9 +34,9 @@ const ShoppingList = ({ children, onClick }) => {
             <h4>Total</h4>
           </div>
           <div>
-            <p>222</p>
-            <p>222</p>
-            <p>222</p>
+            <p>{subtotal}</p>
+            <p>{impuesto}</p>
+            <p>{total}</p>
           </div>
         </div>
         <div className='ShoppingList__pago'>

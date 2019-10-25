@@ -13,6 +13,7 @@ import '../assets/styles/Caja.scss';
 const Caja = (props) => {
   const { products, cart } = props;
   let modal = false;
+  let subtotal = 0;
   const hanldAddToCart = (product) => {
     if (product.amount) {
       product.amount += 1;
@@ -84,17 +85,20 @@ const Caja = (props) => {
         ))}
       </div>
       <div className='Caja__compras'>
-        <ShoppingList onClick={() => viewModal(modal)}>
-          {cart.map((item) => (
-            <ItemShoppingList
-              key={item.id}
-              title={item.title}
-              amount={item.amount}
-              price={item.price}
-              priceTotal={item.price * item.amount}
-              onClick={() => handleDeleteToCard(item.id)}
-            />
-          ))}
+        <ShoppingList subtotal={subtotal} onClick={() => viewModal(modal)}>
+          {cart.map((item) => {
+            subtotal += (item.price * item.amount)
+            return (
+              <ItemShoppingList
+                key={item.id}
+                title={item.title}
+                amount={item.amount}
+                price={item.price}
+                priceTotal={item.price * item.amount}
+                onClick={() => handleDeleteToCard(item.id)}
+              />
+            )
+          })}
         </ShoppingList>
       </div>
     </section>
