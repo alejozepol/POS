@@ -13,15 +13,8 @@ import '../assets/styles/Caja.scss';
 const Caja = (props) => {
   const { products, cart, subtotal } = props;
   const [modal, setModal] = useState(false);
-  const viewModal = () => {
-    modal ? setModal(false) : setModal(true);
-    console.log(modal);
-  };
-
-  const hanldAddToCart = (product) => {
-    props.addToCart(product);
-  };
-
+  const viewModal = () => (modal ? setModal(false) : setModal(true));
+  const hanldAddToCart = (product) => props.addToCart(product);
   const handleDeleteToCard = (item) => {
     props.deleteToCart(item);
     // eslint-disable-next-line array-callback-return
@@ -31,7 +24,7 @@ const Caja = (props) => {
       }
     });
   };
-
+  const pagar = cart.length > 0;
   return (
     <section className='Caja'>
       {modal && (
@@ -77,7 +70,7 @@ const Caja = (props) => {
         ))}
       </div>
       <div className='Caja__compras'>
-        <ShoppingList subtotal={subtotal} onClick={() => viewModal(modal)}>
+        <ShoppingList subtotal={subtotal} onClick={() => viewModal(modal)} pagar={pagar}>
           {cart.map((item) => {
             return (
               <ItemShoppingList

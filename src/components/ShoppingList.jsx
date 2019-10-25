@@ -1,10 +1,10 @@
 import React from 'react';
 import Icons from './Atomos/Icons';
 import Button from './Atomos/Button';
-import '../assets/styles/components/ShoppingList.scss';
 import Input from './Atomos/Input';
+import '../assets/styles/components/ShoppingList.scss';
 
-const ShoppingList = ({ children, onClick, subtotal }) => {
+const ShoppingList = ({ children, onClick, subtotal, pagar }) => {
   const impuesto = Math.round(subtotal * 0.19);
   const total = subtotal + impuesto;
   return (
@@ -39,9 +39,12 @@ const ShoppingList = ({ children, onClick, subtotal }) => {
             <p>{total}</p>
           </div>
         </div>
-        <div className='ShoppingList__pago'>
-          <Button type='aceptar' onClick={onClick}>Pagar</Button>
-        </div>
+        {pagar && (
+          <div className='ShoppingList__pago'>
+            <Button type='aceptar' onClick={onClick}>Pagar</Button>
+          </div>
+        )}
+
       </div>
     </section>
 
