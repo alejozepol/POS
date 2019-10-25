@@ -9,8 +9,10 @@ const Icons = ({ type, onClick }) => {
   switch (type) {
     case 'check':
       return (<i className='material-icons'> check </i>);
+    case 'close':
+      return (<i className='material-icons'> close </i>);
     case 'delete':
-      return (<i className='material-icons'> delete </i>);
+      return (<i className='material-icons'> delete_forever </i>);
     case 'google':
       return (<img className='Icons--img' src={IcoGoogle} alt='Logo Caja' />);
     case 'facebook':
@@ -20,7 +22,7 @@ const Icons = ({ type, onClick }) => {
     case 'inventario':
       return (<img className='Icons--img' src={IcoInventario} alt='Logo Inventario' />);
     default:
-        return (<i className='material-icons'> check </i>);
+      return (<i className='material-icons'> check </i>);
 
   }
 };

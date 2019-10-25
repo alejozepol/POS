@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addToCart, deleteToCart } from '../actions';
 import CardProducts from '../components/Atomos/CardProducts';
@@ -12,13 +12,19 @@ import '../assets/styles/Caja.scss';
 
 const Caja = (props) => {
   const { products, cart, subtotal } = props;
-  let modal = false;
+  const [modal, setModal] = useState(false);
+  const viewModal = () => {
+    modal ? setModal(false) : setModal(true);
+    console.log(modal);
+  };
+
   const hanldAddToCart = (product) => {
     props.addToCart(product);
   };
 
   const handleDeleteToCard = (item) => {
     props.deleteToCart(item);
+    // eslint-disable-next-line array-callback-return
     products.map((product) => {
       if (item.id === product.id) {
         item.amount = 0;
@@ -26,16 +32,10 @@ const Caja = (props) => {
     });
   };
 
-  const viewModal = () => {
-
-    modal ? modal = false : modal = true;
-    console.log(modal);
-  };
-
   return (
     <section className='Caja'>
       {modal && (
-        <Modal>
+        <Modal onClick={() => viewModal(modal)}>
           <h3>Modalidad de Pago</h3>
           <Button type='aceptar'>
             Efectivo
@@ -88,7 +88,7 @@ const Caja = (props) => {
                 priceTotal={item.price * item.amount}
                 onClick={() => handleDeleteToCard(item)}
               />
-            )
+            );
           })}
         </ShoppingList>
       </div>

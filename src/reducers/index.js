@@ -17,7 +17,6 @@ const reducer = (state, action) => {
         subtotal: state.subtotal + action.payload.price,
       };
     case 'DELETE_TO_CART':
-
       return {
         ...state,
         cart: state.cart.filter((items) => items.id !== action.payload.id),
